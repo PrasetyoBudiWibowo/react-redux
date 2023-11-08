@@ -1,4 +1,6 @@
-import { createStore } from 'redux'
+import { createStore, compose, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+// import reducers from './reducers/index'
 
 const initialState = {
   sidebarShow: true,
@@ -14,4 +16,5 @@ const changeState = (state = initialState, { type, ...rest }) => {
 }
 
 const store = createStore(changeState)
+// const store = createStore(reducers, compose(applyMiddleware(thunk)))
 export default store
